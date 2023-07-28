@@ -89,7 +89,7 @@ func NewKafkaAdmin(
 	admClient := kadm.NewClient(kclient)
 	go func() {
 		<-ctx.Done()
-		admClient.Close()
+		kclient.Close()
 	}()
 	return admClient, nil
 }
